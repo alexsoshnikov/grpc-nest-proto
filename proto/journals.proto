@@ -13,7 +13,7 @@ service JournalService {
 // CreateJournal
 message CreateJournalRequest {
   string title = 1;
-  string author = 2;
+  int32 author = 2;
   optional string image = 3;
   string body = 4;
   string datetime = 5;
