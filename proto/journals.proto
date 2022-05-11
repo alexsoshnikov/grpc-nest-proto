@@ -1,13 +1,13 @@
 syntax = "proto3";
-
+import "google/protobuf/empty.proto";
 package journals;
 
 service JournalService {
   rpc CreateJournal (CreateJournalRequest) returns (CreateJournalResponse) {}
   rpc EditJournal (EditJournalRequest) returns (EditJournalResponse) {}
-  rpc DeleteJournal (DeleteJournalRequest) returns (Empty) {}
+  rpc DeleteJournal (DeleteJournalRequest) returns (google.protobuf.Empty) {}
   rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
-  rpc FindAll (Empty) returns (FindAllResponse) {}
+  rpc FindAll (google.protobuf.Empty) returns (FindAllResponse) {}
 }
 
 // CreateJournal
@@ -72,6 +72,3 @@ message FindAllResponse {
   repeated string error = 2;
   Data data = 3;
 }
-
-
-message Empty {}
