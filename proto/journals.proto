@@ -31,7 +31,11 @@ message CreateJournalResponse {
 
 message EditJournalRequest {
   int32 id = 1;
-  JournalRequest data = 2;
+  string title = 2;
+  int32 author = 3;
+  optional string image = 4;
+  string body = 5;
+  string datetime = 6;
 }
 
 message EditJournalResponse {
