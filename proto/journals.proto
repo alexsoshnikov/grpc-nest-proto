@@ -10,7 +10,6 @@ service JournalService {
   rpc FindAll (google.protobuf.Empty) returns (FindAllResponse) {}
 }
 
-// CreateJournal
 message JournalRequest {
   string title = 1;
   int32 author = 2;
@@ -19,6 +18,7 @@ message JournalRequest {
   string datetime = 5;
 }
 
+// CreateJournal
 message CreateJournalResponse {
   int32 status = 1;
   repeated string error = 2;
@@ -28,19 +28,17 @@ message CreateJournalResponse {
 
 
 // EditJournal
+
 message EditJournalRequest {
-  string id = 1;
-  string title = 2;
-  string author = 3;
-  optional string image = 4;
-  string body = 5;
-  string datetime = 6;
+  int32 id = 1;
+  JournalRequest data = 2;
 }
 
 message EditJournalResponse {
   int32 status = 1;
   repeated string error = 2;
-  EditJournalRequest data = 4;
+  int32 id = 3;
+  JournalRequest data = 4;
 }
 
 //DeleteJournal
