@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package product;
+package journals;
 
-service ProductService {
+service JournalService {
   rpc CreateJournal (CreateJournalRequest) returns (CreateJournalResponse) {}
   rpc EditJournal (EditJournalRequest) returns (EditJournalResponse) {}
   rpc DeleteJournal (DeleteJournalRequest) returns (Empty) {}
