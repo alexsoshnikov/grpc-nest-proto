@@ -14,22 +14,22 @@ enum UserType {
   STUDENT = 2;
 }
 
-message UserData {
+// Register
+message RegisterRequest {
   string firstName = 1;
   string lastName = 2;
   string email = 4;
   string password = 5;
-  UserType type = 6;
-}
-
-// Register
-message RegisterRequest {
-  UserData user = 1;
 }
 
 message RegisterResponse {
   int32 status = 1;
   repeated string error = 2;
+  int32 id = 3;
+  string firstName = 4;
+  string lastName = 5;
+  string email = 6;
+  UserType type = 7;
 }
 
 // Login
@@ -52,6 +52,9 @@ message ValidateRequest {
 message ValidateResponse {
   int32 status = 1;
   repeated string error = 2;
-  int32 userId = 3;
-  UserData data = 4;
+  int32 id = 3;
+  string firstName = 4;
+  string lastName = 5;
+  string email = 6;
+  UserType type = 7;
 }
