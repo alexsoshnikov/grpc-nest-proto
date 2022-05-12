@@ -8,11 +8,6 @@ service AssignmentService {
   rpc DeleteAssignment (DeleteAssignmentRequest) returns (DeleteAssignmentResponse) {}
   rpc FindOneAssignment (FindOneAssignmentRequest) returns (FindOneAssignmentResponse) {}
   rpc FindAllAssignments (google.protobuf.Empty) returns (FindAllAssignmentsResponse) {}
-
-  rpc CreateGradeAssignment (CreateGradeAssignmentRequest) returns (CreateGradeAssignmentResponse) {}
-  rpc EditGradeAssignment (EditGradeAssignmentRequest) returns (EditGradeAssignmentResponse) {}
-  rpc DeleteGradeAssignment (DeleteGradeAssignmentRequest) returns (DeleteAssignmentResponse) {}
-  rpc FindOneGradeAssignment (FindOneGradeAssignmentRequest) returns (FindOneGradeAssignmentResponse) {}
 }
 
 //CreateAssignment
@@ -104,64 +99,4 @@ message FindAllAssignmentsResponse {
   int32 status = 1;
   repeated string error = 2;
   repeated Assignments assignments = 4;
-}
-
-
-//CreateGradeAssignment
-message CreateGradeAssignmentRequest {
-  int32 idAssignment = 1;
-  int32 grade = 2;
-  string comment = 3;
-}
-message CreateGradeAssignmentResponse {
-  int32 status = 1;
-  repeated string error = 2;
-  int32 id = 3;
-  int32 idAssignment = 4;
-  int32 grade = 5;
-  string comment = 6;
-}
-
-
-//EditGradeAssignment
-message EditGradeAssignmentRequest {
-  int32 id = 1;
-  int32 idAssignment = 2;
-  int32 grade = 3;
-  string comment = 4;
-}
-
-message EditGradeAssignmentResponse {
-  int32 status = 1;
-  repeated string error = 2;
-  int32 id = 3;
-  int32 idAssignment = 4;
-  int32 grade = 5;
-  string comment = 6;
-}
-
-//DeleteGradeAssignment
-message DeleteGradeAssignmentRequest {
-  int32 id = 1;
-}
-
-message DeleteGradeAssignmentResponse {
-  int32 status = 1;
-  repeated string error = 2;
-}
-
-
-//FindOneGradeAssignment
-message FindOneGradeAssignmentRequest {
-  optional int32 id = 1;
-  optional int32 idAssignment = 2;
-}
-
-message FindOneGradeAssignmentResponse {
-  int32 status = 1;
-  repeated string error = 2;
-  int32 id = 3;
-  int32 idAssignment = 4;
-  int32 grade = 5;
-  string comment = 6;
 }
