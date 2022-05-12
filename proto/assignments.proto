@@ -20,6 +20,9 @@ message CreateAssignmentRequest {
   string title = 1;
   string description = 2;
   repeated int32 idStudents = 3;
+  string courseName = 4;
+  int32 idTeacher = 5;
+  string deadline = 6;
 }
 
 message CreateAssignmentResponse {
@@ -29,6 +32,9 @@ message CreateAssignmentResponse {
   string title = 4;
   string description = 5;
   repeated int32 idStudents = 6;
+  string courseName = 7;
+  int32 idTeacher = 8;
+  string deadline = 9;
 }
 
 
@@ -38,6 +44,9 @@ message EditAssignmentRequest {
   string title = 2;
   string description = 3;
   repeated int32 idStudents = 4;
+  string courseName = 5;
+  int32 idTeacher = 6;
+  string deadline = 7;
 }
 
 message EditAssignmentResponse {
@@ -47,6 +56,9 @@ message EditAssignmentResponse {
   string title = 4;
   string description = 5;
   repeated int32 idStudents = 6;
+  string courseName = 7;
+  int32 idTeacher = 8;
+  string deadline = 9;
 }
 
 //DeleteAssignment
@@ -72,6 +84,9 @@ message FindOneAssignmentResponse {
   string title = 4;
   string description = 5;
   repeated int32 idStudents = 6;
+  string courseName = 7;
+  int32 idTeacher = 8;
+  string deadline = 9;
 }
 
 //FindAllAssignments
@@ -80,6 +95,9 @@ message Assignments {
   string title = 4;
   string description = 5;
   repeated int32 idStudents = 6;
+  string courseName = 7;
+  int32 idTeacher = 8;
+  string deadline = 9;
 }
 
 message FindAllAssignmentsResponse {
