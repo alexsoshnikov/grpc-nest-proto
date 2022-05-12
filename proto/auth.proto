@@ -20,6 +20,7 @@ message RegisterRequest {
   string lastName = 2;
   string email = 4;
   string password = 5;
+  UserType type = 6;
 }
 
 message RegisterResponse {
